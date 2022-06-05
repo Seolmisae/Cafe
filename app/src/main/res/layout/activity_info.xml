@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.cafe.CafeInfo">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:background="@drawable/adorable96"
+            android:contentDescription="TODO"
+            tools:ignore="ContentDescription" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Adorable96"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:translationX="20dp" />
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="강원도 삼척시 교동로1길 15-1 1층"
+            android:translationX="20dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <RatingBar
+                android:id="@+id/ratingBar2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:text="리뷰"
+                android:textColor="#000000"
+                app:backgroundTint="@color/white" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#B6B6B6" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="86dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:drawableTop="@drawable/ic_baseline_favorite_border_24"
+                android:text="찜"
+                android:textColor="#000000"
+                app:backgroundTint="@color/white"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FFFFFF"
+                android:drawableTop="@drawable/ic_baseline_favorite_border_24"
+                android:text="리뷰작성"
+                android:textColor="#000000"
+                app:backgroundTint="@color/white"
+                style="?android:attr/buttonBarButtonStyle" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#B6B6B6"/>
+
+        <TabHost
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/tabHost1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TabWidget
+                    android:id="@android:id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <FrameLayout
+                    android:id="@android:id/tabcontent"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp">
+
+                    <LinearLayout
+                        android:id="@+id/info"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="기본정보"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:translationX="20dp"
+                            android:translationY="10dp" />
+
+                        <View
+                            android:id="@+id/view3"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp" />
+
+                        <TextView
+                            android:id="@+id/timeView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="매일 10:00~19:00 (일 휴무)"
+                            android:translationX="20dp"
+                            app:drawableStartCompat="@drawable/ic_baseline_access_time_24" />
+
+                        <TextView
+                            android:id="@+id/placeView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="강원도 삼척시 교동로1길 15-1 1층"
+                            android:translationX="20dp"
+                            app:drawableStartCompat="@drawable/ic_baseline_place_24" />
+
+                        <TextView
+                            android:id="@+id/callView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="010-6697-9378"
+                            android:translationX="20dp"
+                            app:drawableStartCompat="@drawable/ic_baseline_call_24" />
+
+                        <TextView
+                            android:id="@+id/tagView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="#심플"
+                            android:translationX="20dp"
+                            app:drawableStartCompat="@drawable/ic_baseline_local_offer_24" />
+
+                        <TextView
+                            android:id="@+id/homewebView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="http://instagram.com/adorable_96_"
+                            android:translationX="20dp"
+                            app:drawableStartCompat="@drawable/ic_baseline_home_24" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Menu"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:translationX="20dp"
+                            android:translationY="10dp" />
+
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp" />
+
+                        <ListView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:ignore="NestedScrolling" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/find"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="카페 장소"
+                            android:textSize="25sp"
+                            android:textStyle="bold"
+                            android:translationX="20dp"
+                            android:translationY="10dp" />
+
+                        <View
+                            android:id="@+id/view5"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp" />
+
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+        </TabHost>
+
+    </LinearLayout>
+
+</ScrollView>

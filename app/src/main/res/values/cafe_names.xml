@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="cafe_names">
+        <item>AI Cafe</item>
+        <item>SW coffee</item>
+        <item>Metabus Cafe</item>
+        <item>Compcake</item>
+        <item>Facebook</item>
+        <item>Amazon</item>
+        <item>Netflix</item>
+        <item>Twitter</item>
+        <item>Kakao</item>
+        <item>Naver</item>
+        <item>AMD</item>
+        <item>Intel</item>
+        <item>Nvidia</item>
+    </string-array>
+</resources>

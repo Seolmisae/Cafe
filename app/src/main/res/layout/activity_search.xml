@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MypageActivity">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="top"
+            android:columnCount="3"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/notice"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_gravity="top"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#D7E9F5"
+                android:drawableTop="@drawable/ic_baseline_search_24"
+                android:scaleType="fitCenter"
+                tools:ignore="InvalidId,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/main"
+                android:layout_width="225dp"
+                android:layout_height="80dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="top"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="17dp"
+                android:text="@string/notice"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+        </GridLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/bottom_bar" />
+</androidx.constraintlayout.widget.ConstraintLayout>
