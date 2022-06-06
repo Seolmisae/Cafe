@@ -1,68 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/drawerLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:context=".MainActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
 
 
     <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="#fff">
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="#fff">
 
         <GridLayout
-                android:layout_width="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="bottom"
+            android:columnCount="3"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/menu"
+                android:layout_width="70dp"
+                android:layout_height="69dp"
+                android:layout_gravity="top"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/white"
+                android:drawableTop="@drawable/ic_baseline_menu_24"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/main"
+                android:layout_width="225dp"
                 android:layout_height="80dp"
-                android:layout_gravity="bottom"
-                android:columnCount="3"
-                tools:ignore="UselessParent">
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="top"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="골목카페"
+                android:textSize="40sp"
+                tools:ignore="HardcodedText" />
 
-                <Button
-                    android:id="@+id/menu"
-                    android:layout_width="70dp"
-                    android:layout_height="69dp"
-                    android:layout_gravity="top"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginTop="10dp"
-                    android:adjustViewBounds="true"
-                    android:backgroundTint="@color/white"
-                    android:drawableTop="@drawable/ic_baseline_menu_24"
-                    android:scaleType="fitCenter"
-                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+            <Button
+                android:id="@+id/login"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="@color/white"
+                android:drawableTop="@drawable/ic_action_name"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
 
-                <TextView
-                    android:id="@+id/main"
-                    android:layout_width="225dp"
-                    android:layout_height="80dp"
-                    android:layout_row="0"
-                    android:layout_column="1"
-                    android:layout_gravity="top"
-                    android:layout_marginTop="15dp"
-                    android:gravity="center_horizontal"
-                    android:text="골목카페"
-                    android:textSize="40sp"
-                    tools:ignore="HardcodedText" />
-
-                <Button
-                    android:id="@+id/login"
-                    android:layout_width="70dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="top"
-                    android:layout_marginStart="18dp"
-                    android:layout_marginTop="10dp"
-                    android:adjustViewBounds="true"
-                    android:backgroundTint="@color/white"
-                    android:drawableTop="@drawable/ic_action_name"
-                    android:scaleType="fitCenter"
-                    tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
-
-            </GridLayout>
+        </GridLayout>
 
         <LinearLayout
             android:layout_width="352dp"
@@ -72,42 +72,42 @@
             android:orientation="horizontal"
             android:translationY="15dp">
 
-                <Button
-                    android:id="@+id/button2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:backgroundTint="#D7E9F5"
-                    android:text="#러블리"
-                    android:textColor="@color/black"/>
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#D7E9F5"
+                android:text="#러블리"
+                android:textColor="@color/black"/>
 
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:backgroundTint="#DCDCDC"
-                    android:text="#어두운"
-                    android:textColor="@color/black"/>
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#DCDCDC"
+                android:text="#어두운"
+                android:textColor="@color/black"/>
 
-                <Button
-                    android:id="@+id/button4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="18dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="18dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:backgroundTint="#F9EFA9"
-                    android:text="#소품샵"
-                    android:textColor="@color/black"/>
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="18dp"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#F9EFA9"
+                android:text="#소품샵"
+                android:textColor="@color/black"/>
         </LinearLayout>
 
         <ImageView
@@ -135,7 +135,7 @@
             android:translationY="75dp"
             android:background="@drawable/maincafe1" />
 
-        </LinearLayout>
+    </LinearLayout>
 
     <include layout="@layout/bottom_bar" />
 

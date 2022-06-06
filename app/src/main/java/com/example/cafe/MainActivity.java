@@ -63,11 +63,12 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(mypageintent);
                     break;
                 case R.id.review:
-                    Intent reviewintent = new Intent(this, com.example.cafe.MypageActivity.class);
+                    Intent reviewintent = new Intent(this, com.example.cafe.ReviewActivity.class);
                     startActivity(reviewintent);
                     break;
                 case R.id.location:
-                    Toast.makeText(getApplicationContext(), "LOCATION", Toast.LENGTH_SHORT).show();
+                    Intent locationintent = new Intent(this, com.example.gps.Gps.class);
+                    startActivity(locationintent);
                     break;
                 case R.id.setting:
                     Toast.makeText(getApplicationContext(), "SETTING", Toast.LENGTH_SHORT).show();
@@ -89,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button searchOpen = findViewById(R.id.search);
         searchOpen.setOnClickListener(v -> {
-            Intent searchintent = new Intent(getApplicationContext(), com.example.search.SearchableActivity.class);
+            Intent searchintent = new Intent(getApplicationContext(), com.example.Fragments.HomeFragment.class);
             startActivity(searchintent);
         });
 
@@ -98,5 +99,6 @@ public class MainActivity extends AppCompatActivity {
             Intent homeintent = new Intent(getApplicationContext(), com.example.cafe.MainActivity.class);
             startActivity(homeintent);
         });
+
     }
 }
