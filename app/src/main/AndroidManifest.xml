@@ -57,6 +57,10 @@
             android:exported="true" />
 
         <activity
+            android:name="com.example.cafe.ReInformation"
+            android:exported="true"/>
+
+        <activity
             android:name="com.example.Fragments.HomeFragment"
             android:exported="true" />
 
