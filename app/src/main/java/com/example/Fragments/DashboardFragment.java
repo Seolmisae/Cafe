@@ -1,5 +1,6 @@
 package com.example.Fragments;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,8 +30,8 @@ public class DashboardFragment extends Fragment {
     private List<FavItem> favItemList = new ArrayList<>();
     private FavAdapter favAdapter;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreate(@NonNull LayoutInflater inflater,
+                         ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
         favDB = new FavDB(getActivity());
@@ -52,11 +54,12 @@ public class DashboardFragment extends Fragment {
         }
         SQLiteDatabase db = favDB.getReadableDatabase();
         Cursor cursor = favDB.select_all_favorite_list();
+
         try {
             while (cursor.moveToNext()) {
-                String title = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE));
-                String id = cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID));
-                int image = Integer.parseInt(cursor.getString(cursor.getColumnIndex(FavDB.ITEM_IMAGE)));
+                @SuppressLint("Range") String title = cursor.getString(cursor.getColumnIndex(FavDB.ITEM_TITLE));
+                @SuppressLint("Range") String id = cursor.getString(cursor.getColumnIndex(FavDB.KEY_ID));
+                @SuppressLint("Range") int image = Integer.parseInt(cursor.getString(cursor.getColumnIndex(FavDB.ITEM_IMAGE)));
                 FavItem favItem = new FavItem(title, id, image);
                 favItemList.add(favItem);
             }

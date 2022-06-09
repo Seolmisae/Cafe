@@ -24,7 +24,6 @@
         android:layout_height="wrap_content"
         android:text="Latte"
         android:textColor="#fff"
-        style="@style/TextAppearance.AppCompat.Title"
         android:layout_gravity="bottom"
         android:layout_marginStart="18dp"
         android:layout_marginBottom="18dp"/>

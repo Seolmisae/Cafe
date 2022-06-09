@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical">
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_gravity="top"
+            android:columnCount="3"
+            tools:ignore="UselessParent">
+
+            <Button
+                android:id="@+id/menu"
+                android:layout_width="70dp"
+                android:layout_height="80dp"
+                android:layout_gravity="top"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#D7E9F5"
+                android:drawableTop="@drawable/menu"
+                android:scaleType="fitCenter"
+                tools:ignore="InvalidId,SpeakableTextPresentCheck" />
+
+            <TextView
+                android:id="@+id/reinformation"
+                android:layout_width="225dp"
+                android:layout_height="80dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="top"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="17dp"
+                android:text="개인 정보 수정"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+        </GridLayout>
+
+            <View
+                android:id="@+id/view2"
+                android:layout_width="match_parent"
+                android:layout_height="35dp" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="이름"
+                android:textSize="20dp"
+                android:translationX="26dp"/>
+
+            <LinearLayout
+                android:layout_width="381dp"
+                android:layout_height="75dp"
+                android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="259dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="Name"
+                android:translationX="26dp"/>
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="변경" />
+            </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

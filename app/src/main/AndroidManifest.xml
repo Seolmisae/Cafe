@@ -22,7 +22,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cafe"
-        tools:ignore="HardcodedDebugMode"
+        tools:ignore="HardcodedDebugMode,Instantiatable,MissingClass"
         android:usesCleartextTraffic="true"
         tools:targetApi="p">
 
@@ -31,7 +31,7 @@
             android:value="AIzaSyCbqk65SRFVls_8d3jdVwS0ZplmcJwjPi0" />
 
         <activity
-            android:name="com.example.cafe.MainActivity"
+            android:name="com.example.cafe.Home"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,11 +41,19 @@
         </activity>
 
         <activity
+            android:name="com.example.cafe.MainActivity"
+            android:exported="true"/>
+
+        <activity
             android:name="com.example.cafe.MypageActivity"
             android:exported="true" />
 
         <activity
             android:name="com.example.cafe.Customorder"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.cafe.Notice"
             android:exported="true" />
 
         <activity
@@ -77,6 +85,10 @@
             tools:ignore="Instantiatable" />
 
         <activity android:name="com.example.Fragments.HomeFragment"
+            android:exported="true"
+            tools:ignore="Instantiatable" />
+
+        <activity android:name="com.example.Fragments.DashboardFragment"
             android:exported="true"
             tools:ignore="Instantiatable" />
 

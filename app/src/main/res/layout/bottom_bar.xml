@@ -1,82 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.cafe.BottomBar">
+    tools:context="com.example.cafe.Bottombar">
 
-    <GridLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_gravity="bottom"
-        android:background="#D7E9F5"
-        android:columnCount="5"
-        tools:ignore="UselessParent">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/map"
-            android:layout_width="60dp"
-            android:layout_height="80dp"
-            android:layout_column="0"
-            android:layout_gravity="top"
-            android:layout_marginStart="25dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#D7E9F5"
-            android:drawableTop="@drawable/ic_baseline_map_24"
-            android:scaleType="fitCenter"
-            tools:ignore="SpeakableTextPresentCheck" />
+        <GridLayout
+            android:id="@+id/bottombar"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_gravity="bottom"
+            android:background="#D7E9F5"
+            android:columnCount="5"
+            tools:ignore="UselessParent">
 
-        <Button
-            android:id="@+id/search"
-            android:layout_width="60dp"
-            android:layout_height="80dp"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_gravity="top"
-            android:layout_marginStart="14dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#D7E9F5"
-            android:drawableTop="@drawable/ic_baseline_search_24"
-            android:scaleType="fitCenter"
-            tools:ignore="SpeakableTextPresentCheck" />
+            <Button
+                android:id="@+id/map"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_column="0"
+                android:layout_gravity="top"
+                android:layout_marginStart="25dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#D7E9F5"
+                android:drawableTop="@drawable/ic_baseline_map_24"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-        <Button
-            android:id="@+id/home"
-            android:layout_width="60dp"
-            android:layout_height="80dp"
-            android:layout_column="2"
-            android:layout_gravity="top"
-            android:layout_marginStart="14dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#D7E9F5"
-            android:drawableTop="@drawable/ic_baseline_home_24"
-            android:scaleType="fitCenter"
-            tools:ignore="SpeakableTextPresentCheck" />
+            <Button
+                android:id="@+id/search"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="top"
+                android:layout_marginStart="14dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#D7E9F5"
+                android:drawableTop="@drawable/ic_baseline_search_24"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-        <Button
-            android:id="@+id/notice"
-            android:layout_width="60dp"
-            android:layout_height="80dp"
-            android:layout_column="3"
-            android:layout_gravity="top"
-            android:layout_marginStart="14dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#D7E9F5"
-            android:drawableTop="@drawable/ic_baseline_notifications_none_24"
-            android:scaleType="fitCenter"
-            tools:ignore="SpeakableTextPresentCheck" />
+            <Button
+                android:id="@+id/home"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_column="2"
+                android:layout_gravity="top"
+                android:layout_marginStart="14dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#D7E9F5"
+                android:drawableTop="@drawable/ic_baseline_home_24"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck" />
 
-        <Button
-            android:id="@+id/favorite"
-            android:layout_width="60dp"
-            android:layout_height="80dp"
-            android:layout_column="4"
-            android:layout_gravity="top"
-            android:layout_marginStart="14dp"
-            android:adjustViewBounds="true"
-            android:backgroundTint="#D7E9F5"
-            android:drawableTop="@drawable/ic_baseline_favorite_border_24"
-            android:scaleType="fitCenter"
-            tools:ignore="SpeakableTextPresentCheck" />
-    </GridLayout>
-</LinearLayout>
+            <Button
+                android:id="@+id/notice"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_column="3"
+                android:layout_gravity="top"
+                android:layout_marginStart="14dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#D7E9F5"
+                android:drawableTop="@drawable/ic_baseline_notifications_none_24"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <Button
+                android:id="@+id/favorite"
+                android:layout_width="60dp"
+                android:layout_height="80dp"
+                android:layout_column="4"
+                android:layout_gravity="top"
+                android:layout_marginStart="14dp"
+                android:adjustViewBounds="true"
+                android:backgroundTint="#D7E9F5"
+                android:drawableTop="@drawable/ic_baseline_favorite_border_24"
+                android:scaleType="fitCenter"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </GridLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

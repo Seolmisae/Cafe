@@ -7,9 +7,6 @@ public class CoffeeItem {
     private String key_id;
     private String favStatus;
 
-    public CoffeeItem() {
-    }
-
     public CoffeeItem(int imageResourse, String title, String key_id, String favStatus) {
         this.imageResourse = imageResourse;
         this.title = title;

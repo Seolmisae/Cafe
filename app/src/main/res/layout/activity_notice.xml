@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MypageActivity">
+    tools:context=".Notice">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -48,6 +48,16 @@
                 android:textStyle="bold" />
 
         </GridLayout>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="31dp" />
+
+        <ListView
+            android:id="@+id/notice_list"
+            android:layout_width="match_parent"
+            android:layout_height="500dp" />
 
     </LinearLayout>
 

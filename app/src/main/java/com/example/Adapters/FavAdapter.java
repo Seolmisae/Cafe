@@ -1,6 +1,7 @@
 package com.example.Adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -27,12 +29,12 @@ import com.example.cafe.R;
 
 public class FavAdapter extends RecyclerView.Adapter<FavAdapter.ViewHolder> {
 
-    private Context context;
+    private FragmentActivity context;
     private List<FavItem> favItemList;
     private FavDB favDB;
     private DatabaseReference refLike;
 
-    public FavAdapter(Context context, List<FavItem> favItemList) {
+    public FavAdapter(FragmentActivity context, List<FavItem> favItemList) {
         this.context = context;
         this.favItemList = favItemList;
     }
@@ -71,38 +73,35 @@ public class FavAdapter extends RecyclerView.Adapter<FavAdapter.ViewHolder> {
 
             refLike = FirebaseDatabase.getInstance().getReference().child("likes");
             //remove from fav after click
-            favBtn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    int position = getAdapterPosition();
-                    final FavItem favItem = favItemList.get(position);
-                    final DatabaseReference upvotesRefLike = refLike.child(favItemList.get(position).getKey_id());
-                    favDB.remove_fav(favItem.getKey_id());
-                    removeItem(position);
+            favBtn.setOnClickListener(view -> {
+                int position = getAdapterPosition();
+                final FavItem favItem = favItemList.get(position);
+                final DatabaseReference upvotesRefLike = refLike.child(favItemList.get(position).getKey_id());
+                favDB.remove_fav(favItem.getKey_id());
+                removeItem(position);
 
-                    upvotesRefLike.runTransaction(new Transaction.Handler() {
-                        @NonNull
-                        @Override
-                        public Transaction.Result doTransaction(@NonNull final MutableData mutableData) {
-                            try {
-                                Integer currentValue = mutableData.getValue(Integer.class);
-                                if (currentValue == null) {
-                                    mutableData.setValue(1);
-                                } else {
-                                    mutableData.setValue(currentValue - 1);
-                                }
-                            } catch (Exception e) {
-                                throw e;
+                upvotesRefLike.runTransaction(new Transaction.Handler() {
+                    @NonNull
+                    @Override
+                    public Transaction.Result doTransaction(@NonNull final MutableData mutableData) {
+                        try {
+                            Integer currentValue = mutableData.getValue(Integer.class);
+                            if (currentValue == null) {
+                                mutableData.setValue(1);
+                            } else {
+                                mutableData.setValue(currentValue - 1);
                             }
-                            return Transaction.success(mutableData);
+                        } catch (Exception e) {
+                            throw e;
                         }
+                        return Transaction.success(mutableData);
+                    }
 
-                        @Override
-                        public void onComplete(@Nullable DatabaseError databaseError, boolean b, @Nullable DataSnapshot dataSnapshot) {
-                            System.out.println("Transaction completed");
-                        }
-                    });
-                }
+                    @Override
+                    public void onComplete(@Nullable DatabaseError databaseError, boolean b, @Nullable DataSnapshot dataSnapshot) {
+                        System.out.println("Transaction completed");
+                    }
+                });
             });
         }
     }
