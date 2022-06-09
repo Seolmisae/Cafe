@@ -2,47 +2,33 @@ package com.example.cafe;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 
-public class Customorder extends AppCompatActivity{
+public class Customorder extends Fragment {
 
-    private TextView textView_Date, textView_time;
     private DatePickerDialog.OnDateSetListener callbackMethod;
 
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.activity_customorder, container, false);
+        final TextView textView_Date = root.findViewById(R.id.textView_date);
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customorder);
+        callbackMethod = (view, year, monthOfYear, dayOfMonth) -> textView_Date.setText(year + "년" + monthOfYear + "월" + dayOfMonth + "일");
 
-        this.InitializeView();
-        this.InitializeListener();
+        OnClickHandler();
+        return root;
     }
 
-    public void InitializeView()
+    public void OnClickHandler()
     {
-        textView_Date = (TextView)findViewById(R.id.textView_date);
-    }
-
-    public void InitializeListener()
-    {
-        callbackMethod = new DatePickerDialog.OnDateSetListener()
-        {
-            @Override
-            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth)
-            {
-                textView_Date.setText(year + "년" + monthOfYear + "월" + dayOfMonth + "일");
-            }
-        };
-    }
-
-    public void OnClickHandler(View view)
-    {
-        DatePickerDialog dialog = new DatePickerDialog(this, callbackMethod, 2022, 5, 23);
+        DatePickerDialog dialog = new DatePickerDialog(getContext(), callbackMethod, 2022, 5, 23);
 
         dialog.show();
     }

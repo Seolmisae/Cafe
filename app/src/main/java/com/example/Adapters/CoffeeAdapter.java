@@ -1,7 +1,5 @@
 package com.example.Adapters;
 
-import static android.content.Context.MODE_PRIVATE;
-
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -49,7 +47,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         favDB = new FavDB(context);
         //create table on first
-        SharedPreferences prefs = context.getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
         boolean firstStart = prefs.getBoolean("firstStart", true);
         if (firstStart) {
             createTableOnFirstStart();
@@ -93,11 +91,14 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
             likeCountTextView = itemView.findViewById(R.id.likeCountTextView);
 
             //add to fav btn
-            favBtn.setOnClickListener(view -> {
-                int position = getAdapterPosition();
-                CoffeeItem coffeeItem = coffeeItems.get(position);
+            favBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    int position = getAdapterPosition();
+                    CoffeeItem coffeeItem = coffeeItems.get(position);
 
-                likeClick(coffeeItem, favBtn, likeCountTextView);
+                    likeClick(coffeeItem, favBtn, likeCountTextView);
+                }
             });
         }
     }
@@ -105,7 +106,7 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
     private void createTableOnFirstStart() {
         favDB.insertEmpty();
 
-        SharedPreferences prefs = context.getSharedPreferences("prefs", MODE_PRIVATE);
+        SharedPreferences prefs = context.getSharedPreferences("prefs", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
         editor.putBoolean("firstStart", false);
         editor.apply();
@@ -213,6 +214,13 @@ public class CoffeeAdapter extends RecyclerView.Adapter<CoffeeAdapter.ViewHolder
                 }
             });
         }
+
+
+
+
+
+
+
 
 
     }

@@ -9,26 +9,12 @@
     android:fitsSystemWindows="true"
     tools:context=".Home">
 
-    <include layout="@layout/appbar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <include layout="@layout/appbar" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/nav_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?android:attr/windowBackground"
-            android:gravity="bottom"
-            app:menu="@menu/bottom_nav_menu"
-            tools:layout_editor_absoluteX="0dp"
-            tools:layout_editor_absoluteY="835dp"
-            tools:ignore="MissingConstraints" />
 
         <fragment
             android:id="@+id/nav_host_fragment"
@@ -36,11 +22,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:defaultNavHost="true"
-            app:layout_constraintBottom_toBottomOf="@id/nav_view"
-            app:navGraph="@navigation/mobile_navigation"
-            tools:layout_editor_absoluteX="0dp" />
+            app:navGraph="@navigation/mobile_navigation" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/windowBackground"
+            app:menu="@menu/bottom_nav_menu"
+            tools:ignore="MissingConstraints">
+
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+    </FrameLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationView"
@@ -48,8 +43,11 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/main_navheader"
-        app:menu="@menu/menu" >
+        app:menu="@menu/menu">
 
     </com.google.android.material.navigation.NavigationView>
+
+
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

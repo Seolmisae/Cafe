@@ -21,7 +21,7 @@ public class FavDB extends SQLiteOpenHelper {
             + KEY_ID + " TEXT," + ITEM_TITLE+ " TEXT,"
             + ITEM_IMAGE + " TEXT," + FAVORITE_STATUS+" TEXT)";
 
-    public FavDB(Context context) { super(context, DATABASE_NAME, null, DB_VERSION);}
+    public FavDB(Context context) { super(context,DATABASE_NAME,null,DB_VERSION);}
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {

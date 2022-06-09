@@ -134,7 +134,4 @@
                 android:textSize="30sp" />
         </GridLayout>
     </LinearLayout>
-
-    <include layout="@layout/bottom_bar"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

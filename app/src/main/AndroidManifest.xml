@@ -57,6 +57,14 @@
             android:exported="true" />
 
         <activity
+            android:name="com.example.Fragments.HomeFragment"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.Fragments.DashboardFragment"
+            android:exported="true" />
+
+        <activity
             android:name="com.example.cafe.ReviewActivity"
             android:exported="true" />
 
@@ -86,21 +94,11 @@
 
         <activity android:name="com.example.Fragments.HomeFragment"
             android:exported="true"
-            tools:ignore="Instantiatable" />
+            tools:ignore="DuplicateActivity,Instantiatable" />
 
         <activity android:name="com.example.Fragments.DashboardFragment"
             android:exported="true"
-            tools:ignore="Instantiatable" />
-
-        <activity
-            android:name="com.example.search.SearchableActivity"
-            android:exported="true">
-                <intent-filter>
-                        <action android:name="android.intent.action.SEARCH" />
-                </intent-filter>
-        </activity>
-
-
+            tools:ignore="DuplicateActivity,Instantiatable" />
 
         <uses-library
             android:name="androidx.window.extensions"

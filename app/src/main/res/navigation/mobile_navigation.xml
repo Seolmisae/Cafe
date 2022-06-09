@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/navigation_order"
-        android:name="com.example.Fragments.HomeFragment"
+        android:name="com.example.cafe.Customorder"
         tools:layout="@layout/activity_customorder" />
 
     <fragment

@@ -1,7 +1,6 @@
 package com.example.Adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.DataSnapshot;
@@ -29,12 +27,12 @@ import com.example.cafe.R;
 
 public class FavAdapter extends RecyclerView.Adapter<FavAdapter.ViewHolder> {
 
-    private FragmentActivity context;
+    private Context context;
     private List<FavItem> favItemList;
     private FavDB favDB;
     private DatabaseReference refLike;
 
-    public FavAdapter(FragmentActivity context, List<FavItem> favItemList) {
+    public FavAdapter(Context context, List<FavItem> favItemList) {
         this.context = context;
         this.favItemList = favItemList;
     }

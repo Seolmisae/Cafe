@@ -2,18 +2,19 @@ package com.example.cafe;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
-import androidx.navigation.fragment.NavHostFragment;
+import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.example.register.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -27,42 +28,17 @@ public class Home extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.navigation_home, R.id.navigation_favorite, R.id.navigation_notice,  R.id.navigation_order, R.id.navigation_search)
+                R.id.navigation_home, R.id.navigation_favorite, R.id.navigation_search, R.id.navigation_order, R.id.navigation_notice)
                 .build();
 
-        final NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment);
-        NavController navController = navHostFragment.getNavController();
-
+        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-        this.InitializeLayout();
         this.Drawer();
+        //this.topBar();
     }
 
-    public void InitializeLayout()
-    {
-        //toolBar를 통해 App Bar 생성
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        //App Bar의 좌측 영영에 Drawer를 Open 하기 위한 Incon 추가
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
-
-        DrawerLayout drawer = findViewById(R.id.drawerLayout);
-        NavigationView navigationView = findViewById(R.id.navigationView);
-
-        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(
-                this,
-                drawer,
-                toolbar,
-                R.string.open,
-                R.string.closed
-        );
-
-        drawer.addDrawerListener(actionBarDrawerToggle);
-    }
 
     public void Drawer() {
 
@@ -101,5 +77,39 @@ public class Home extends AppCompatActivity {
             super.onBackPressed();
         }
     }
+
+    /**public void topBar() {
+        Button menuOpen = findViewById(R.id.menu);
+        menuOpen.setOnClickListener(v -> {
+            DrawerLayout drawer = findViewById(R.id.drawerLayout);
+            if (!drawer.isDrawerOpen(Gravity.LEFT)) {
+                drawer.openDrawer(Gravity.LEFT);
+            }
+        });
+
+        Button loginOpen = findViewById(R.id.login);
+        loginOpen.setOnClickListener(v -> {
+            Intent loginintent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(loginintent);
+        });
+
+    }**/
+
+    public boolean onCreateOptionsMenu(Menu action_menu) {
+        getMenuInflater().inflate(R.menu.action_menu, action_menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle presses on the action bar items
+        if (item.getItemId() == R.id.login_button) {
+            Intent loginintent = new Intent(this, LoginActivity.class);
+            startActivity(loginintent);
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }
